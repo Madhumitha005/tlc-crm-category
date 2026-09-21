@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metadata>
+
+    <module name="module_crm_category">
+
+        <table name="OMCGCategory" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="NAME" data-type="CHAR" nullable="false" max-length="100"/>
+                <column name="CREATED_TIME" data-type="BIGINT" nullable="false"/>
+                <column name="MODIFIED_TIME" data-type="BIGINT" nullable="false"/>
+            </columns>
+
+            <primary-key
+                    name="OMCGCategory_PK"
+                    column="ID"
+                    sequence-generator="OMCGCategory.ID"/>
+
+            <foreign-keys>
+                <foreign-key
+                        name="OMCGCategory_FK1"
+                        reference-table="FGOrganisation"
+                        local-column="ORG_ID"
+                        reference-column="ID"
+                        constraint="ON-DELETE-CASCADE"/>
+            </foreign-keys>
+
+            <unique-keys>
+                <unique-key name="OMCGCategory_UK1">
+                    <unique-key-column>ORG_ID</unique-key-column>
+                    <unique-key-column>NAME</unique-key-column>
+                </unique-key>
+            </unique-keys>
+
+        </table>
+
+    </module>
+
+</metadata>

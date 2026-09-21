@@ -54,7 +54,6 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
-                        <!-- No Bundle-Activator — see Step 8 -->
                         <Export-Package>com.tlc.crm.category.*</Export-Package>
                     </instructions>
                 </configuration>
